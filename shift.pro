@@ -1,4 +1,4 @@
-update=Tue 25 Oct 2016 08:01:48 AM PDT
+update=Tue 25 Oct 2016 11:19:24 PM PDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,11 +23,9 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
-LibDir=/home/alex/local/share/kicad
+LibDir=/home/alex/local/share/kicad;/home/alex/projects/electronics/kicad/lib
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -59,3 +57,6 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=eeschema-driver
+LibName31=mta-156
+[general]
+version=1
