@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:shift-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -526,7 +527,7 @@ trig2
 Text GLabel 4800 5750 0    60   Input ~ 0
 trig3
 $Comp
-L 7805 U7
+L 7805-RESCUE-shift U7
 U 1 1 58106894
 P 9900 1200
 F 0 "U7" H 10050 1004 50  0000 C CNN
@@ -592,7 +593,7 @@ U 1 1 580F9B91
 P 9000 1600
 F 0 "C16" H 9025 1700 50  0000 L CNN
 F 1 "10uF" H 9025 1500 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2" H 9038 1450 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_Tantal_D7.0mm_P2.50mm" H 9038 1450 50  0001 C CNN
 F 3 "" H 9000 1600 50  0000 C CNN
 	1    9000 1600
 	1    0    0    -1  
@@ -603,7 +604,7 @@ U 1 1 580F9BF6
 P 9000 900
 F 0 "C15" H 9025 1000 50  0000 L CNN
 F 1 "10uF" H 9025 800 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2" H 9038 750 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:CP_Radial_Tantal_D7.0mm_P2.50mm" H 9038 750 50  0001 C CNN
 F 3 "" H 9000 900 50  0000 C CNN
 	1    9000 900 
 	-1   0    0    1   
@@ -1005,6 +1006,50 @@ F 2 "Resistors_ThroughHole:Resistor_Vertical_RM5mm" V 7830 3400 50  0001 C CNN
 F 3 "" H 7900 3400 50  0000 C CNN
 	1    7900 3400
 	0    1    1    0   
+$EndComp
+$Comp
+L C C4
+U 1 1 58157A2B
+P 2750 1150
+F 0 "C4" H 2775 1250 50  0000 L CNN
+F 1 "100n" H 2775 1050 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L4_W2.5_P2.5" H 2788 1000 50  0001 C CNN
+F 3 "" H 2750 1150 50  0000 C CNN
+	1    2750 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR016
+U 1 1 58157D01
+P 3100 1150
+F 0 "#PWR016" H 3100 900 50  0001 C CNN
+F 1 "GND" H 3100 1000 50  0000 C CNN
+F 2 "" H 3100 1150 50  0000 C CNN
+F 3 "" H 3100 1150 50  0000 C CNN
+	1    3100 1150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L PWR_FLAG #FLG017
+U 1 1 59AFD13C
+P 9200 850
+F 0 "#FLG017" H 9200 925 50  0001 C CNN
+F 1 "PWR_FLAG" H 9200 1000 50  0000 C CNN
+F 2 "" H 9200 850 50  0001 C CNN
+F 3 "" H 9200 850 50  0001 C CNN
+	1    9200 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG018
+U 1 1 59AFD1C8
+P 9100 1350
+F 0 "#FLG018" H 9100 1425 50  0001 C CNN
+F 1 "PWR_FLAG" H 9100 1500 50  0000 C CNN
+F 2 "" H 9100 1350 50  0001 C CNN
+F 3 "" H 9100 1350 50  0001 C CNN
+	1    9100 1350
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1550 1250 1900 1250
@@ -1555,31 +1600,31 @@ Connection ~ 7350 2600
 Connection ~ 7350 2500
 Wire Wire Line
 	7350 1950 7350 2050
-$Comp
-L C C4
-U 1 1 58157A2B
-P 2750 1150
-F 0 "C4" H 2775 1250 50  0000 L CNN
-F 1 "100n" H 2775 1050 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Rect_L4_W2.5_P2.5" H 2788 1000 50  0001 C CNN
-F 3 "" H 2750 1150 50  0000 C CNN
-	1    2750 1150
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	2450 1150 2600 1150
 Connection ~ 2450 1150
-$Comp
-L GND #PWR016
-U 1 1 58157D01
-P 3100 1150
-F 0 "#PWR016" H 3100 900 50  0001 C CNN
-F 1 "GND" H 3100 1000 50  0000 C CNN
-F 2 "" H 3100 1150 50  0000 C CNN
-F 3 "" H 3100 1150 50  0000 C CNN
-	1    3100 1150
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2900 1150 3100 1150
+Wire Wire Line
+	9100 1350 9100 1400
+Connection ~ 9100 1400
+Wire Wire Line
+	9200 850  9100 850 
+Wire Wire Line
+	9100 850  9100 1100
+Connection ~ 9100 1100
+$Comp
+L PWR_FLAG #FLG019
+U 1 1 59AFDBE2
+P 8700 700
+F 0 "#FLG019" H 8700 775 50  0001 C CNN
+F 1 "PWR_FLAG" H 8700 850 50  0000 C CNN
+F 2 "" H 8700 700 50  0001 C CNN
+F 3 "" H 8700 700 50  0001 C CNN
+	1    8700 700 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 700  8700 750 
+Connection ~ 8700 750 
 $EndSCHEMATC
